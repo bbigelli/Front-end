@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Gastos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>    
+    <main>
+        <h1>Controle de Gastos</h1>
+        <form>
+            <label for="valor">Valor:</label>
+            <input type="text" id="valor" placeholder="Digite o valor">
+        
+            <label for="categoria">Categoria:</label>
+            <select id="categoria">
+                <option value="">Selecione</option>
+                <option value="alimentacao">Alimentação</option>
+                <option value="transporte">Transporte</option>
+                <option value="lazer">Lazer</option>
+                <option value="outros">Outros</option>
+            </select>
+            <br>
+            <br>
+        
+            <button type="button" onclick="adicionarGasto()">Adicionar Gasto</button>
+        </form>
+        
+        <div id="resultado">
+            <p id="totalAlimentacao">Alimentação: R$ 0.00</p>
+            <p id="totalTransporte">Transporte: R$ 0.00</p>
+            <p id="totalLazer">Lazer: R$ 0.00</p>
+            <p id="totalOutros">Outros: R$ 0.00</p>
+        </div>
+    </main>  
+    <br>
+    <br>
+    <br>
+    <br>  
+    
+    <footer>
+        <p>&copy; 2025 Bruno Bigelli - Todos os direito reservados!</p>
+        <p>Desenvolvido por Bruno Bigelli</p>
+    </footer>
+    
+</body>
+</html>
