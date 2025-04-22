@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emailInput.value = savedData.email || '';
         cepInput.value = savedData.cep || '';
         enderecoInput.value = savedData.endereco || '';
-        numeroImput.value = savedData.endereco || '';
+        numeroInput.value = savedData.endereco || '';
         cidadeInput.value = savedData.cidade || '';
         estadoInput.value = savedData.estado || '';
     }
