@@ -1,0 +1,68 @@
+## Estrutura do Projeto
+
+- `index.html`: Contém a estrutura HTML da interface do chatbot.
+- `styles.css`: Define os estilos visuais do chatbot, como cores, fontes e layout.
+- `scripts.js`: Contém a lógica do chatbot, incluindo respostas automáticas e eventos de interação.
+- `Furia.webp`: Imagem da logo da FURIA usada no título do chatbot.
+
+## Funcionalidades
+
+1. **Respostas Automáticas**:
+   - O chatbot responde automaticamente a mensagens baseadas em palavras-chave.
+   - Exemplos de palavras-chave: "olá", "time", "jogadores", "logo", "adeus".
+
+2. **Suporte a Emojis**:
+   - Os emojis são renderizados usando a biblioteca Twemoji para um visual consistente.
+
+3. **Suporte a Imagens**:
+   - O chatbot pode exibir imagens, como a logo da FURIA, em suas respostas.
+
+4. **Interface Interativa**:
+   - As mensagens do usuário e do chatbot são exibidas dinamicamente no chat-box.
+
+   ## Como Funciona
+
+1. O usuário digita uma mensagem no campo de entrada e clica em "Enviar".
+2. A mensagem do usuário é exibida no chat-box.
+3. O chatbot verifica se a mensagem corresponde a uma das palavras-chave no objeto `respostas`.
+4. Se houver correspondência, o chatbot exibe a resposta associada.
+5. Caso contrário, o chatbot exibe uma mensagem padrão: "Desculpe, não entendi. Pode reformular?".
+6. Emojis e imagens são renderizados automaticamente nas respostas.
+
+## Tecnologias Utilizadas
+
+- **HTML5**: Estrutura da interface do chatbot.
+- **CSS3**: Estilização do layout e design responsivo.
+- **JavaScript (ES6)**: Lógica do chatbot e manipulação do DOM.
+
+## Como Executar
+
+1. Clone o repositório ou copie os arquivos para o seu computador.
+2. Certifique-se de que todos os arquivos (`index.html`, `styles.css`, `scripts.js`, `Furia.webp`) estão no mesmo diretório.
+3. Abra o arquivo `index.html` em um navegador moderno (como Google Chrome ou Firefox).
+4. Interaja com o chatbot digitando mensagens no campo de entrada.
+
+## Exemplos de Uso
+
+- **Mensagem**: "olá", "oi", "e aí", "ola"
+  **Resposta**: "Olá, fã da FURIA! 👋 Como posso te ajudar hoje?"
+
+- **Mensagem**: "time", "furia", "cs"
+  **Resposta**: "O time de CS da FURIA é incrível! 🐺 Eles estão sempre prontos para vencer."
+
+  **Mensagem**: "jogadores", "quem joga"
+  **Resposta**: "Os jogadores da FURIA são: KSCERATO, yuurih, arT, drop e chelo. 🎮"
+
+  **Mensagem**: "próximo jogo", "agenda", "quando jogam"
+  **Resposta**: "O próximo jogo será anunciado em breve! Fique ligado nas redes sociais da FURIA. 🕒",
+
+- **Mensagem**: "logo"
+  **Resposta**: Exibe a imagem da logo da FURIA.
+
+- **Mensagem**: "adeus", "tchau", "até mais", "obrigado"
+  **Resposta**: "Até mais! Obrigado por conversar com o chatbot da FURIA. 👋"
+
+
+  ## Créditos
+
+- Desenvolvido por Bruno Bigelli.
