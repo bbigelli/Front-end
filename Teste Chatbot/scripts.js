@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        return "Desculpe, não entendi. Pode reformular? 🤔";
+        return "Desculpe, não entendi. Talvez você tenha digitado incorretamente. 🤔";
     }
 
     // Função para adicionar mensagens ao chat
