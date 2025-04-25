@@ -1,4 +1,4 @@
-const API_URL = "https://crudcrud.com/api/15ab0454efb540729f8556c9e4161b7b/clientes"; // Substitua YOUR_UNIQUE_API_KEY pela sua chave da API CrudCrud
+const API_URL = "https://crudcrud.com/api/15ab0454efb540729f8556c9e4161b7b/clientes";
 
 document.addEventListener('DOMContentLoaded', () => {
     const clienteForm = document.getElementById('clienteForm');
