@@ -1,30 +1,78 @@
-/* Estilos Gerais */
+/* === Estilos Gerais === */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333;
+    background-color: #f9f9f9;
 }
 
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #4CAF50;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+/* === Componentes Reutilizáveis === */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.input, .textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* === Header === */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
 }
 
 .header__logo img {
     height: 50px;
 }
 
+.header__nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 .header__menu {
     list-style: none;
     display: flex;
     gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 .header__menu-item {}
@@ -35,7 +83,11 @@ body {
     font-weight: bold;
 }
 
-/* Banner */
+.header__menu-link:hover {
+    text-decoration: underline;
+}
+
+/* === Banner === */
 .banner {
     text-align: center;
     padding: 100px 20px;
@@ -45,27 +97,40 @@ body {
 
 .banner__title {
     font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .banner__subtitle {
     font-size: 1.2rem;
 }
 
-/* About */
+/* === Sobre Nós === */
 .about {
     padding: 40px 20px;
     text-align: center;
+    background-color: #fff;
 }
 
 .about__title {
     margin-bottom: 20px;
+    font-size: 2rem;
 }
 
-.about__description {}
+.about__description {
+    font-size: 1rem;
+    color: #666;
+}
 
-/* Services */
+/* === Serviços === */
 .services {
     padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+.services__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
 .services__grid {
@@ -76,7 +141,7 @@ body {
 
 .services__item {
     text-align: center;
-    background: #f4f4f4;
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -85,16 +150,29 @@ body {
 .services__image {
     max-width: 100%;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.services__item-title {}
+.services__item-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
 
-.services__item-description {}
+.services__item-description {
+    font-size: 1rem;
+    color: #666;
+}
 
-/* Testimonials */
+/* === Depoimentos === */
 .testimonials {
     padding: 40px 20px;
     text-align: center;
+    background-color: #fff;
+}
+
+.testimonials__title {
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
 .testimonials__quote {
@@ -103,15 +181,36 @@ body {
     background: #f9f9f9;
     border-left: 5px solid #4CAF50;
     max-width: 600px;
+    text-align: left;
 }
 
-.testimonials__text {}
+.testimonials__text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
 
-.testimonials__author {}
+.testimonials__author {
+    font-size: 0.9rem;
+    color: #666;
+}
 
-/* Contact */
+/* === Contato === */
 .contact {
     padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+.contact__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.contact__description {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #666;
 }
 
 .contact__form {
@@ -122,27 +221,21 @@ body {
     gap: 10px;
 }
 
-.contact__input,
-.contact__textarea,
 .contact__button {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contact__button {
-    background: #4CAF50;
+    background-color: #4CAF50;
     color: white;
     border: none;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 .contact__button:hover {
-    background: #45a049;
+    background-color: #45a049;
 }
 
-/* Footer */
+/* === Footer === */
 .footer {
     text-align: center;
     padding: 20px;
@@ -150,4 +243,23 @@ body {
     color: white;
 }
 
-.footer__text {}
+.footer__text {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .header__menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner {
+        padding: 50px 20px;
+    }
+
+    .services__grid {
+        grid-template-columns: 1fr;
+    }
+}
