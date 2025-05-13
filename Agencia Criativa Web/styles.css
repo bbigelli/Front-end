@@ -4,34 +4,38 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #000000;
+    color: #333;
 }
 
-header {
+/* Header */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: #723472;
-    color: rgb(255, 1, 1);
+    background: #4CAF50;
+    color: white;
 }
 
-header .logo img {
+.header__logo img {
     height: 50px;
 }
 
-header .menu {
+.header__menu {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-header .menu li a {
+.header__menu-item {}
+
+.header__menu-link {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
+/* Banner */
 .banner {
     text-align: center;
     padding: 100px 20px;
@@ -39,22 +43,38 @@ header .menu li a {
     color: white;
 }
 
-section {
-    padding: 40px 20px;
+.banner__title {
+    font-size: 2.5rem;
 }
 
-h2 {
+.banner__subtitle {
+    font-size: 1.2rem;
+}
+
+/* About */
+.about {
+    padding: 40px 20px;
     text-align: center;
+}
+
+.about__title {
     margin-bottom: 20px;
 }
 
-.grid-servicos {
+.about__description {}
+
+/* Services */
+.services {
+    padding: 40px 20px;
+}
+
+.services__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-.servico {
+.services__item {
     text-align: center;
     background: #f4f4f4;
     padding: 20px;
@@ -62,12 +82,22 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.servico img {
+.services__image {
     max-width: 100%;
     border-radius: 10px;
 }
 
-blockquote {
+.services__item-title {}
+
+.services__item-description {}
+
+/* Testimonials */
+.testimonials {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials__quote {
     margin: 20px auto;
     padding: 20px;
     background: #f9f9f9;
@@ -75,7 +105,16 @@ blockquote {
     max-width: 600px;
 }
 
-form {
+.testimonials__text {}
+
+.testimonials__author {}
+
+/* Contact */
+.contact {
+    padding: 40px 20px;
+}
+
+.contact__form {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
@@ -83,43 +122,32 @@ form {
     gap: 10px;
 }
 
-input, textarea, button {
+.contact__input,
+.contact__textarea,
+.contact__button {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-button {
+.contact__button {
     background: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-button:hover {
+.contact__button:hover {
     background: #45a049;
 }
 
-footer {
+/* Footer */
+.footer {
     text-align: center;
     padding: 20px;
     background: #333;
     color: white;
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .menu {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .banner {
-        padding: 50px 20px;
-    }
-}
+.footer__text {}

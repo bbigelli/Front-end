@@ -9,95 +9,94 @@
 </head>
 <body>
     <!-- Cabeçalho -->
-    <header>
-        <div class="logo">
+    <header class="header">
+        <div class="header__logo">
             <img src="imagens/logo.png" alt="Logo da Agência Criativa Web">
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre-nos">Sobre Nós</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item"><a class="header__menu-link" href="#home">Home</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#sobre-nos">Sobre Nós</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#servicos">Serviços</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#depoimentos">Depoimentos</a></li>
+                <li class="header__menu-item"><a class="header__menu-link" href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Home -->
     <section id="home" class="banner">
-        <h1>Bem-vindo à Agência Criativa Web</h1>
-        <p>Transformamos ideias em experiências digitais incríveis.</p>
+        <h1 class="banner__title">Bem-vindo à Agência Criativa Web</h1>
+        <p class="banner__subtitle">Transformamos ideias em experiências digitais incríveis.</p>
     </section>
 
     <!-- Sobre Nós -->
-    <section id="sobre-nos">
-        <h2>Sobre Nós</h2>
-        <p>Somos uma agência de design digital apaixonada por criar soluções inovadoras. Nosso objetivo é ajudar empresas a se destacarem no mercado com designs modernos e funcionais.</p>
+    <section id="sobre-nos" class="about">
+        <h2 class="about__title">Sobre Nós</h2>
+        <p class="about__description">Somos uma agência de design digital apaixonada por criar soluções inovadoras. Nosso objetivo é ajudar empresas a se destacarem no mercado com designs modernos e funcionais.</p>
     </section>
 
     <!-- Serviços -->
-    <section id="servicos">
-        <h2>Serviços</h2>
-        <div class="grid-servicos">
-            <div class="servico">
-                <img src="imagens/servico1.jpg" alt="Design Gráfico">
-                <h3>Design Gráfico</h3>
-                <p>Criamos identidades visuais que destacam sua marca.</p>
+    <section id="servicos" class="services">
+        <h2 class="services__title">Serviços</h2>
+        <div class="services__grid">
+            <div class="services__item">
+                <img class="services__image" src="imagens/servico1.jpg" alt="Design Gráfico">
+                <h3 class="services__item-title">Design Gráfico</h3>
+                <p class="services__item-description">Criamos identidades visuais que destacam sua marca.</p>
             </div>
-            <div class="servico">
-                <img src="imagens/servico2.jpg" alt="Desenvolvimento Web">
-                <h3>Desenvolvimento Web</h3>
-                <p>Sites modernos, responsivos e otimizados para SEO.</p>
+            <div class="services__item">
+                <img class="services__image" src="imagens/servico2.jpg" alt="Desenvolvimento Web">
+                <h3 class="services__item-title">Desenvolvimento Web</h3>
+                <p class="services__item-description">Sites modernos, responsivos e otimizados para SEO.</p>
             </div>
-            <div class="servico">
-                <img src="imagens/servico3.jpg" alt="Branding">
-                <h3>Branding</h3>
-                <p>Estratégias de marca que conectam com seu público.</p>
+            <div class="services__item">
+                <img class="services__image" src="imagens/servico3.jpg" alt="Branding">
+                <h3 class="services__item-title">Branding</h3>
+                <p class="services__item-description">Estratégias de marca que conectam com seu público.</p>
             </div>
         </div>
     </section>
 
     <!-- Depoimentos -->
-    <section id="depoimentos">
-        <h2>Depoimentos</h2>
-        <blockquote>
-            <p>"A Agência Criativa Web transformou nossa presença digital. Recomendo!"</p>
-            <cite>- Cliente Fictício</cite>
+    <section id="depoimentos" class="testimonials">
+        <h2 class="testimonials__title">Depoimentos</h2>
+        <blockquote class="testimonials__quote">
+            <p class="testimonials__text">"A Agência Criativa Web transformou nossa presença digital. Recomendo!"</p>
+            <cite class="testimonials__author">- Cliente Fictício</cite>
         </blockquote>
-        <blockquote>
-            <p>"Design incrível e suporte excepcional. Estamos muito satisfeitos."</p>
-            <cite>- Outro Cliente Fictício</cite>
+        <blockquote class="testimonials__quote">
+            <p class="testimonials__text">"Design incrível e suporte excepcional. Estamos muito satisfeitos."</p>
+            <cite class="testimonials__author">- Outro Cliente Fictício</cite>
         </blockquote>
     </section>
 
     <!-- Contato -->
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Entre em contato conosco:</p>
-        <address>
-            <p>Endereço: Rua Fictícia, 123</p>
-            <p>Telefone: (11) 1234-5678</p>
-            <p>E-mail: contato@agenciacriativaweb.com</p>
+    <section id="contato" class="contact">
+        <h2 class="contact__title">Contato</h2>
+        <p class="contact__description">Entre em contato conosco:</p>
+        <address class="contact__info">
+            <p class="contact__info-item">Endereço: Rua Fictícia, 123</p>
+            <p class="contact__info-item">Telefone: (11) 1234-5678</p>
+            <p class="contact__info-item">E-mail: contato@agenciacriativaweb.com</p>
         </address>
-        <form>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" placeholder="Seu nome" required>
+        <form class="contact__form">
+            <label class="contact__label" for="nome">Nome:</label>
+            <input class="contact__input" type="text" id="nome" placeholder="Seu nome" required>
             
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" placeholder="Seu e-mail" required>
+            <label class="contact__label" for="email">E-mail:</label>
+            <input class="contact__input" type="email" id="email" placeholder="Seu e-mail" required>
             
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" placeholder="Digite sua mensagem" required></textarea>
+            <label class="contact__label" for="mensagem">Mensagem:</label>
+            <textarea class="contact__textarea" id="mensagem" placeholder="Digite sua mensagem" required></textarea>
             
-            <button type="submit">Enviar</button>
+            <button class="contact__button" type="submit">Enviar</button>
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Agência Criativa Web. Todos os direitos reservados.</p>
-        <p>&copy; 2025 Bruno Bigelli - Todos os direitos reservados!</p>
-        <p>Desenvolvido por Bruno Bigelli</p>
+    <footer class="footer">
+        <p class="footer__text">&copy; 2025 Agência Criativa Web. Todos os direitos reservados.</p>
+        <p class="footer__text">Desenvolvido por Bruno Bigelli</p>
     </footer>
 </body>
 </html>

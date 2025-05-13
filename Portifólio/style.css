@@ -4,6 +4,37 @@
     padding: 0;
 }
 
+.nav{
+    background-color: #333;
+}
+.nav__list{
+    list-style: none;
+    padding: 0;
+    display: flex;
+
+}
+.nav__item{
+    width: 100%;
+}
+
+.nav__link{
+    display: block;
+    padding: 1.5rem 1.5rem 1rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav__item--active{
+    background-color: #1203e4;
+}
+
+.nav__link--active{
+    background-color: rgb(255, 0, 0);
+}
+
+
 body {    
     background-color: #f4f4f4;
     margin: 0;
