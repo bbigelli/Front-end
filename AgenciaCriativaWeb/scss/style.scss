@@ -2,7 +2,7 @@
 /* VARIÁVEIS GLOBAIS */
 /* ============================================ */
 
-$primary-color: #4CAF50;
+$primary-color: #45a049;
 $primary-hover: #45a049;
 $dark-color: #333;
 $light-bg: #f9f9f9;
@@ -197,7 +197,7 @@ body {
   text-align: center;
   padding: 3.75rem 1.25rem;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-              url('imagens/banner.jpg') center/cover no-repeat;
+              url('../imagens/banner.jpg') center/cover no-repeat;
   color: $white;
 
   @media (min-width: $breakpoint-md) {
@@ -235,12 +235,81 @@ body {
   }
 }
 
+
+/* ============================================ */
+/* SOBRE */
+/* ============================================ */
+.sobre {
+  background-color: $white;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    font-size: 1.8rem;
+  }
+
+  &__description {
+    max-width: 800px;
+    margin: 0 auto;
+    color: $gray-text;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &__image {
+    @include small-image;
+    display: block;
+    margin: 1.25rem auto;
+  }
+}
+
+/* ============================================ */
+/* SERVIÇOS */
+/* ============================================ */
+.about {
+  background-color: $light-bg;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    font-size: 1.8rem;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: $gray-text;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &__image {
+    @include small-image;
+    display: block;
+    margin: 1.25rem auto;
+  }
+}
+
+.about__description {
+  margin-bottom: 1.875rem;
+  color: $gray-text;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 /* ============================================ */
 /* SERVIÇOS */
 /* ============================================ */
 
 .services {
   background-color: $light-bg;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    font-size: 1.8rem;
+  }
 
   &__grid {
     display: grid;
@@ -277,18 +346,24 @@ body {
 .testimonials {
   background-color: $white;
 
+  &__title {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    font-size: 1.8rem;
+  }
+
   &__quote {
     background: $light-bg;
-    padding: 1.25rem;
-    border-left: 4px solid $primary-color;
+    padding: 1.25rem 1.875rem;
+    border-left: 10px solid $primary-color;
     border-radius: 0 $border-radius $border-radius 0;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto 1.25rem;
   }
 
   &__text {
     font-style: italic;
-    margin-bottom: 0.625rem;
+    margin-bottom: 1.625rem;
   }
 
   &__author {
@@ -303,6 +378,12 @@ body {
 
 .contact {
   background-color: $light-bg;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    font-size: 1.8rem;
+  }
 
   &__description {
     text-align: center;
