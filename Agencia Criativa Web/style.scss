@@ -1,0 +1,347 @@
+/* ============================================ */
+/* VARIÁVEIS GLOBAIS */
+/* ============================================ */
+
+// Cores
+$primary-color: #4CAF50;
+$primary-hover: #45a049;
+$text-color: #333;
+$light-bg: #f9f9f9;
+$white: #fff;
+$dark-bg: #333;
+$gray-text: #666;
+$border-color: #ccc;
+
+// Espaçamentos
+$base-padding: 1rem;
+$base-margin: 1rem;
+$section-padding-vertical: 40px;
+$section-padding-horizontal: 20px;
+
+// Breakpoints
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+/* ============================================ */
+/* MIXINS REUTILIZÁVEIS */
+/* ============================================ */
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin responsive-section {
+  padding: $section-padding-vertical $section-padding-horizontal;
+  background-color: $light-bg;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: calc($section-padding-vertical / 2) calc($section-padding-horizontal / 2);
+  }
+}
+
+@mixin card-style {
+  background: $white;
+  padding: $base-padding;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@mixin button-base {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* ============================================ */
+/* ESTILOS BASE */
+/* ============================================ */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $light-bg;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 $base-margin;
+}
+
+/* ============================================ */
+/* COMPONENTES */
+/* ============================================ */
+
+/* Botões */
+.button {
+  @include button-base;
+  background-color: $primary-color;
+  color: $white;
+  text-align: center;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+.contact__button {
+  @extend .button;
+  width: 100%;
+}
+
+/* Formulários */
+.input, .textarea {
+  width: 100%;
+  padding: $base-padding;
+  margin-bottom: $base-margin;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* ============================================ */
+/* LAYOUT - HEADER */
+/* ============================================ */
+
+.header {
+  background-color: $primary-color;
+  color: $white;
+  padding: $base-padding * 1.5 0;
+  text-align: center;
+
+  &__logo img {
+    height: 50px;
+  }
+
+  &__nav {
+    @include flex-center;
+    gap: $base-padding;
+  }
+
+  &__menu {
+    list-style: none;
+    @include flex-center;
+    gap: $base-padding;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__menu-item {
+    background-color: $dark-bg;
+    padding: calc($base-padding / 2) $base-padding;
+    border-radius: 5px;
+  }
+
+  &__menu-link {
+    color: $white;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: $base-padding;
+    
+    &__menu {
+      flex-direction: column;
+    }
+  }
+}
+
+/* ============================================ */
+/* LAYOUT - SEÇÕES */
+/* ============================================ */
+
+/* Banner */
+.banner {
+  padding: $section-padding-vertical $section-padding-horizontal;
+  text-align: center;
+  background: url('imagens/banner.jpg') no-repeat center center/cover;
+  color: $white;
+
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: $base-margin;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: calc($section-padding-vertical / 2) calc($section-padding-horizontal / 2);
+  }
+}
+
+/* Sobre Nós */
+.about {
+  padding: $section-padding-vertical $section-padding-horizontal;
+  text-align: center;
+  background-color: $white;
+
+  &__title {
+    margin-bottom: $base-margin * 2;
+    font-size: 2rem;
+  }
+
+  &__description {
+    color: $gray-text;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: 20px 10px;
+  }
+}
+
+/* Serviços */
+.services {
+  padding: $section-padding-vertical $section-padding-horizontal;
+  background-color: $light-bg;
+
+  &__title {
+    text-align: center;
+    margin-bottom: $base-margin * 2;
+    font-size: 2rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $base-margin;
+  }
+
+  &__item {
+    @include card-style;
+    text-align: center;
+  }
+
+  &__image {
+    border-radius: 10px;
+    margin-bottom: $base-margin;
+  }
+
+  &__item-description {
+    color: $gray-text;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: calc($section-padding-vertical / 2) calc($section-padding-horizontal / 2);
+  }
+}
+
+/* Depoimentos */
+.testimonials {
+  padding: $section-padding-vertical $section-padding-horizontal;
+  text-align: center;
+  background-color: $white;
+
+  &__title {
+    margin-bottom: $base-margin * 2;
+    font-size: 2rem;
+  }
+
+  &__quote {
+    margin: $base-margin * 2 auto;
+    padding: $base-padding * 2;
+    background: $light-bg;
+    border-left: 5px solid $primary-color;
+    max-width: 600px;
+    text-align: left;
+  }
+
+  &__text {
+    margin-bottom: $base-margin;
+  }
+
+  &__author {
+    color: $gray-text;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: calc($section-padding-vertical / 2) calc($section-padding-horizontal / 2);
+  }
+}
+
+/* Contato */
+.contact {
+  padding: $section-padding-vertical $section-padding-horizontal;
+  background-color: $light-bg;
+
+  &__title {
+    text-align: center;
+    margin-bottom: $base-margin * 2;
+    font-size: 2rem;
+  }
+
+  &__description {
+    text-align: center;
+    margin-bottom: $base-margin * 2;
+    color: $gray-text;
+  }
+
+  &__form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: $base-margin;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: calc($section-padding-vertical / 2) calc($section-padding-horizontal / 2);
+  }
+}
+
+/* ============================================ */
+/* LAYOUT - FOOTER */
+/* ============================================ */
+
+.footer {
+  text-align: center;
+  padding: $base-padding * 2;
+  background: $dark-bg;
+  color: $white;
+
+  &__text {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+/* ============================================ */
+/* MEDIA QUERIES GLOBAIS */
+/* ============================================ */
+
+@media (max-width: $breakpoint-md) {
+  .banner {
+    padding: 50px 20px;
+  }
+  
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

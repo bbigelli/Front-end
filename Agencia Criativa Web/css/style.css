@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* ============================================ */
+/* VARIÁVEIS GLOBAIS */
+/* ============================================ */
+/* ============================================ */
+/* MIXINS REUTILIZÁVEIS */
+/* ============================================ */
+/* ============================================ */
+/* ESTILOS BASE */
+/* ============================================ */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* ============================================ */
+/* COMPONENTES */
+/* ============================================ */
+/* Botões */
+.button, .contact__button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: center;
+}
+.button:hover, .contact__button:hover {
+  background-color: #45a049;
+}
+
+.contact__button {
+  width: 100%;
+}
+
+/* Formulários */
+.input, .textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* ============================================ */
+/* LAYOUT - HEADER */
+/* ============================================ */
+.header {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+.header__logo img {
+  height: 50px;
+}
+.header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.header__menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.header__menu-item {
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.header__menu-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.header__menu-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+  .header__menu {
+    flex-direction: column;
+  }
+}
+
+/* ============================================ */
+/* LAYOUT - SEÇÕES */
+/* ============================================ */
+/* Banner */
+.banner {
+  padding: 40px 20px;
+  text-align: center;
+  background: url("imagens/banner.jpg") no-repeat center center/cover;
+  color: #fff;
+}
+.banner__title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.banner__subtitle {
+  font-size: 1.2rem;
+}
+@media (max-width: 768px) {
+  .banner {
+    padding: 20px 10px;
+  }
+}
+
+/* Sobre Nós */
+.about {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+.about__title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.about__description {
+  color: #666;
+}
+@media (max-width: 768px) {
+  .about {
+    padding: 20px 10px;
+  }
+}
+
+/* Serviços */
+.services {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+.services__title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.services__item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.services__image {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.services__item-description {
+  color: #666;
+}
+@media (max-width: 768px) {
+  .services {
+    padding: 20px 10px;
+  }
+}
+
+/* Depoimentos */
+.testimonials {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+.testimonials__title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.testimonials__quote {
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-left: 5px solid #4CAF50;
+  max-width: 600px;
+  text-align: left;
+}
+.testimonials__text {
+  margin-bottom: 1rem;
+}
+.testimonials__author {
+  color: #666;
+  font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 20px 10px;
+  }
+}
+
+/* Contato */
+.contact {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+.contact__title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.contact__description {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+}
+.contact__form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .contact {
+    padding: 20px 10px;
+  }
+}
+
+/* ============================================ */
+/* LAYOUT - FOOTER */
+/* ============================================ */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #333;
+  color: #fff;
+}
+.footer__text {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ============================================ */
+/* MEDIA QUERIES GLOBAIS */
+/* ============================================ */
+@media (max-width: 768px) {
+  .banner {
+    padding: 50px 20px;
+  }
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
