@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "sass:watch": "sass --watch scss/main.scss css/style.css",
-    "sass:build": "sass scss/main.scss css/style.css --style compressed"
+    "sass:watch": "sass --watch scss/style.scss css/style.css",
+    "sass:build": "sass scss/style.scss css/style.css --style compressed"
   },
   "devDependencies": {
     "sass": "^1.75.0"
