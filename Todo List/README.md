@@ -22,7 +22,7 @@ Passos para Execução
 Clonar o repositório
 
 bash
-git clone https://github.com/bbigelli/Front-end/tree/main/Todo%20List
+git clone https://github.com/bbigelli/Front-end/tree/main/Todo%20List 
 cd advanced-todo-list
 Instalar as dependências
 
