@@ -1,18 +1,18 @@
+import React from 'react';
 import { TodoProvider } from './context/TodoContext';
 import { TodoForm } from './components/TodoForm';
 import { TodoList } from './components/TodoList';
-import { Filter } from './components/Filter';
-import { Stats } from './components/Stats';
+import { TodoFilters } from './components/TodoFilters';
+import './styles.css';
 
 function App() {
   return (
     <TodoProvider>
-      <div>
-        <h1>Todo List Avançada</h1>
+      <div className="app">
+        <h1>Todo List</h1>
         <TodoForm />
-        <Filter />
+        <TodoFilters />
         <TodoList />
-        <Stats />
       </div>
     </TodoProvider>
   );
