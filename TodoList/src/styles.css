@@ -2,16 +2,17 @@
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 input[type="text"] {
   width: 70%;
   padding: 8px;
+  margin-right: 5px;
 }
 
 button {
   padding: 8px 12px;
-  margin-left: 5px;
   cursor: pointer;
 }
 
