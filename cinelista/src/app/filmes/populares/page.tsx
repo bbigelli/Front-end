@@ -1,5 +1,6 @@
 import Title from "@/app/components/Title";
 import Grid from "@/app/components/Grid";
+// Make sure getPopulares is exported from "@/lib/api/tmdb"
 import { getPopulares } from "@/lib/api/tmdb";
 
 

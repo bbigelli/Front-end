@@ -1,61 +1,102 @@
-import Link from 'next/link';
+import { getFilmePorId } from '@/lib/api/tmdb';
 import { notFound } from 'next/navigation';
-import styles from './DetalheFilme.module.css';
-import { getMoviesDetails } from '@/lib/api/tmdb';
+import Image from 'next/image';
+import styles from './page.module.css';
 
-type Props = {
-    params: Promise<{ 
-        id: number
-    }>
+interface Props {
+  params: {
+    id: string;
+  };
 }
 
-export const generateMetadata = async ({ params }: Props) => {
-    const id = await params;
-    const details = await getMoviesDetails(id);
+export default async function FilmeDetalhes({ params }: Props) {
+  const filme = await getFilmePorId(Number(params.id));
 
-    if (!details) {
-        return {
-            title: 'Filme não encontrado'
-        };
-    }
+  if (!filme) {
+    notFound();
+  }
 
-    return {
-        title: details.title,
-        description: details.overview
-    };
-}
+  return (
+    <div className={styles.container}>
+      {filme.backdrop_path && (
+        <Image
+          src={`${process.env.NEXT_PUBLIC_TMDB_API_IMG_URL}${filme.backdrop_path}`}
+          alt={`Backdrop de ${filme.title}`}
+          width={1920}
+          height={1080}
+          className={styles.backdrop}
+          priority
+        />
+      )}
+      
+      <div className={styles.content}>
+        <div className={styles.posterSection}>
+          {filme.poster_path && (
+            <Image
+              src={`${process.env.NEXT_PUBLIC_TMDB_API_IMG_URL}${filme.poster_path}`}
+              alt={`Poster de ${filme.title}`}
+              width={300}
+              height={450}
+              className={styles.poster}
+            />
+          )}
+        </div>
 
-const DetalheFilme = async ({ params }: Props) => {
-    const id = await params;
+        <div className={styles.infoSection}>
+          <h1 className={styles.title}>{filme.title}</h1>
+          
+          {filme.tagline && (
+            <p className={styles.tagline}>{filme.tagline}</p>
+          )}
 
-    const details = await getMoviesDetails(id);
+          <div className={styles.metadata}>
+            {filme.release_date && (
+              <span>{new Date(filme.release_date).getFullYear()}</span>
+            )}
+            
+            {filme.runtime && (
+              <span>{Math.floor(filme.runtime / 60)}h {filme.runtime % 60}min</span>
+            )}
+            
+            <span>⭐ {filme.vote_average.toFixed(1)}</span>
+          </div>
 
-    if (!details)
-        return notFound();
-
-    const { title, poster_path, overview } = details;
-
-    return (
-        <>
-            <div className={styles.detalhes}>
-                <div className={styles.detalhes__container}></div>
-                <Link className={styles.detalhes__voltar} href={"/"}>Voltar</Link>
-                <section>
-                    <figure>
-                        <img
-                            className={styles.detalhes__imagem}
-                            src={`${process.env.NEXT_PUBLIC_TMDB_API_IMG_URL}${poster_path}`}
-                            alt={`Poster do filme : ${title}`}
-                        />
-                    </figure>
-                    <article className={styles.detalhes__info}>
-                        <h2>{title}</h2>
-                        <p>{overview}</p>
-                    </article>
-                </section>
+          {filme.overview && (
+            <div className={styles.overview}>
+              <h2>Sinopse</h2>
+              <p>{filme.overview}</p>
             </div>
-        </>
-    );
-};
+          )}
 
-export default DetalheFilme;
+          {filme.genres && filme.genres.length > 0 && (
+            <div className={styles.genres}>
+              <h3>Gêneros</h3>
+              <div className={styles.genreList}>
+                {filme.genres.map(genre => (
+                  <span key={genre.id} className={styles.genreTag}>
+                    {genre.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export async function generateMetadata({ params }: Props) {
+  const filme = await getFilmePorId(Number(params.id));
+
+  if (!filme) {
+    return {
+      title: 'Filme não encontrado',
+    };
+  }
+
+  return {
+    title: `${filme.title} - Cinelista`,
+    description: filme.overview || `Detalhes do filme ${filme.title}`,
+  };
+}

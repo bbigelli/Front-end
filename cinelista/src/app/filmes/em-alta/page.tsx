@@ -1,10 +1,10 @@
-import Grid from "@/app/components/Grid";
-import Title from "@/app/components/Title";
-import { getNowPlaying } from "@/lib/api/tmdb";
+import { getFilmesEmAlta } from '@/lib/api/tmdb';
+import Grid from '../../components/Grid';
+import Title from '../../components/Title';
 
-
-const FilmesEmAlta = async() => {
-  const filmes = await getNowPlaying();
+export default async function FilmesEmAlta() {
+  const filmes = await getFilmesEmAlta();
+  
   return (
     <>
       <Title title="Filmes em alta" />
@@ -12,4 +12,8 @@ const FilmesEmAlta = async() => {
     </>
   );
 }
-export default FilmesEmAlta;
+
+export const metadata = {
+  title: 'Filmes em Alta - Cinelista',
+  description: 'Descubra os filmes mais populares do momento',
+};
