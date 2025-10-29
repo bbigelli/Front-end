@@ -1,7 +1,7 @@
 import { getFilmePorId } from '@/lib/api/tmdb';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import styles from './page.module.css';
+import styles from './DetalheFilme.module.css';
 
 interface Props {
   params: {
